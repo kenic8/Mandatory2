@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lille\\Desktop\\skole repo\\mandatory-6-8\\Mandatory6-8\\MbmStore\\MbmStore.csproj": {}
+    "C:\\Users\\lille\\Desktop\\skole repo\\Mandatory2\\MbmStore\\MbmStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lille\\Desktop\\skole repo\\mandatory-6-8\\Mandatory6-8\\MbmStore\\MbmStore.csproj": {
+    "C:\\Users\\lille\\Desktop\\skole repo\\Mandatory2\\MbmStore\\MbmStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lille\\Desktop\\skole repo\\mandatory-6-8\\Mandatory6-8\\MbmStore\\MbmStore.csproj",
+        "projectUniqueName": "C:\\Users\\lille\\Desktop\\skole repo\\Mandatory2\\MbmStore\\MbmStore.csproj",
         "projectName": "MbmStore",
-        "projectPath": "C:\\Users\\lille\\Desktop\\skole repo\\mandatory-6-8\\Mandatory6-8\\MbmStore\\MbmStore.csproj",
+        "projectPath": "C:\\Users\\lille\\Desktop\\skole repo\\Mandatory2\\MbmStore\\MbmStore.csproj",
         "packagesPath": "C:\\Users\\lille\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lille\\Desktop\\skole repo\\mandatory-6-8\\Mandatory6-8\\MbmStore\\obj\\",
+        "outputPath": "C:\\Users\\lille\\Desktop\\skole repo\\Mandatory2\\MbmStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lille\\AppData\\Roaming\\NuGet\\NuGet.Config",

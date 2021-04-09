@@ -1,0 +1,190 @@
+﻿@using MbmStore.Models;
+@using MbmStore.Infrastructure;
+
+@addTagHelper"*, Microsoft.AspNetCore.Mvc.TagHelpers"
+
+@model ProductsListViewModel
+@{ ViewData["Title"] = "Products"; }
+
+
+<!DOCTYPE html>
+<head>
+    <title>MbmStore Catalogue</title>
+</head>
+<body>
+
+    @*The new form element contains hidden inputelements specifying the ProductIDvalue fromthe view model and
+        the URL that the browser should be returned to after the cart has been updated. Theformelement areconfigured using built-in tag helpers,
+        which are a useful wayof generating forms that contain model values and that target controllers and actions in the application,
+        asdescribed in lesson 5. The other input element uses the extension method we created to set the return URL.
+        There is also a button element that will submit the form to the application*@
+
+    <div class="products" style="clear:both">
+
+        @if (Model.Products.OfType<Book>().ToList().Count > 0)
+        {
+
+<h2>The Books</h2>
+                @foreach (Book book in Model.Products.OfType<Book>().ToList())
+                {
+@await Html.PartialAsync("_ProductSummaryBook", book);
+}}
+
+
+        @if (Model.Products.OfType<MusicCD>().ToList().Count > 0)
+        {
+<h2>The CDs</h2>
+                @foreach (MusicCD cd in Model.Products.OfType<MusicCD>().ToList())
+                {
+@await Html.PartialAsync("_ProductSummaryMusicCD", cd);
+}}
+
+
+
+        @if (Model.Products.OfType<Movie>().ToList().Count > 0)
+        {
+<h2>The Movies</h2>
+                @foreach (Movie movie in Model.Products.OfType<Movie>().ToList())
+                {
+@await Html.PartialAsync("_ProductSummaryMovie", movie);
+}}
+
+    </div>
+
+
+    <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-secondary"
+         page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
+         class="btn-group pull-right m-1">
+    </div>
+    @*
+        http://<myserver>:<port>/Catalogue/Page1*  becomes   *http://<myserver>:<port>/Catalogue/Music/Page1*@
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h1 style="margin-top:10%;"> without partial it is working</h1>
+
+        <h1>Books</h1>
+        <table>
+            @foreach (Book book in Model.OfType<Book>().ToList())
+            {
+    <tr>
+        <td valign="top">
+            <img src="/Images/@book.ImageUrl" alt="@book.Title" style="width:100px" />
+        </td>
+        <td valign="top" style="width:250px">
+            <div>
+                <strong>Title:</strong>@book.Title
+                <br />
+                <strong>Author:</strong>@book.Author
+                <br />
+                <strong>Price:</strong>@book.Price
+                <br />
+                <strong>Publisher:</strong>@book.Publisher (@book.Published)
+                <br />
+                <strong>ISBN:</strong>@book.ISBN
+                <br />
+                <br />
+            </div>
+        </td>
+        <td style="vertical-align:bottom;padding-left:50px;">
+            <div>
+                <form id="@book.ProductID" asp-action="AddToCart" asp-controller="Cart" method="post">
+                    <input type="hidden" name="ProductID" value="@book.ProductID" />
+                    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" /><span class="card-text p-1">
+                        <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right">Add To Cart</button>
+                    </span>
+                </form>
+            </div>
+        </td>
+    </tr>
+    }
+        </table>
+
+        <h1>Cds</h1>
+        <table>
+            @foreach (MusicCD cd in Model.OfType<MusicCD>().ToList())
+            {
+    <tr>
+        <td valign="top">
+            <img src="/Images/@cd.ImageUrl" alt="@cd.Title" style="width:100px" />
+        </td>
+        <td valign="top" style="width:250px">
+            <div>
+                <strong>Title:</strong>@cd.Title
+                <br />
+                <strong>Author:</strong>@cd.Artist
+                <br />
+                <strong>Price:</strong>@cd.Price
+                <br />
+                <strong>Publisher:</strong>@cd.Label (@cd.Released)
+                <br />
+
+            </div>
+        </td>
+        <td style="vertical-align:bottom;padding-left:50px;">
+            <div>
+                <form id="@cd.ProductID" asp-action="AddToCart" asp-controller="Cart" method="post">
+                    <input type="hidden" name="ProductID" value="@cd.ProductID" />
+                    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" /><span class="card-text p-1">
+                        <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right">Add To Cart</button>
+                    </span>
+                </form>
+            </div>
+        </td>
+    </tr>
+    }
+        </table>
+
+        <h1>Movies</h1>
+        <table>
+
+            @foreach (Movie movie in Model.OfType<Movie>().ToList())
+            {
+    <tr>
+        <td valign="top">
+            <img src="/Images/@movie.ImageUrl" alt="@movie.Title" style="width:100px" />
+        </td>
+        <td valign="top" style="width:250px">
+            <div>
+                <strong>Title:</strong>@movie.Title
+                <br />
+                <strong>Author:</strong>@movie.Director
+                <br />
+                <strong>Price:</strong>@movie.Price
+                <br />
+
+            </div>
+        </td>
+        <td style="vertical-align:bottom;padding-left:50px;">
+            <div>
+                <form id="@movie.ProductID" asp-action="AddToCart" asp-controller="Cart" method="post">
+                    <input type="hidden" name="ProductID" value="@movie.ProductID" />
+                    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" /><span class="card-text p-1">
+                        <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right">Add To Cart</button>
+                    </span>
+                </form>
+            </div>
+        </td>
+    </tr>
+    }
+        </table>*@
+
+

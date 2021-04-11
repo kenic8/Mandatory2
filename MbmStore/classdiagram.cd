@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MbmStore.Models.ViewModels.Cart">
+    <Position X="14" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAgAAAAAACAAAAAABGAAA=</HashCode>
+      <FileName>Models\ViewModels\Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MbmStore.Models.ViewModels.SessionCart">
+    <Position X="18.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEQAAAAAAAEAAgAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\ViewModels\SessionCart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MbmStore.Models.Book">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAiAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MbmStore.Models.Movie">
+    <Position X="13.75" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Movie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MbmStore.Models.MusicCD">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEEAACAAIAAAAAAAAAIAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\MusicCD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MbmStore.Models.Product">
+    <Position X="9.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAQAAAAQAAAEAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MbmStore.Models.Track">
+    <Position X="7.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Models\Track.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
